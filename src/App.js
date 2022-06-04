@@ -1,9 +1,9 @@
 import './App.css';
 import Customh1 from './components/Customh1';
 
-const App = () =>  {
+const App = ({name}) =>  {
   return (
-    <Customh1 name='john doe'/>
+    <Customh1 name={name}/>
   );
 }
 
