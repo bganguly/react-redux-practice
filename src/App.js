@@ -3,7 +3,7 @@ import Customh1 from './components/Customh1';
 
 const App = () =>  {
   return (
-    <Customh1/>
+    <Customh1 name='john doe'/>
   );
 }
 
