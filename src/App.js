@@ -1,9 +1,10 @@
 import './App.css';
 import Customh1 from './components/Customh1';
+import ParentChildProps from './components/ParentChildProps';
 
-const App = ({name}) =>  {
+const App = () =>  {
   return (
-    <Customh1 name={name}/>
+    <ParentChildProps/>
   );
 }
 
