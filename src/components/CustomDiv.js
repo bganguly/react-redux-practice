@@ -1,5 +1,5 @@
-const Customh1 = ({name}) => {
-  return <h1>hello {name}</h1>
+const CustomDiv = ({name}) => {
+  return <div>hello {name}</div>
 }
 
-export default Customh1
+export default CustomDiv
