@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Customh1 from "./Customh1"
+import CustomDiv from "./CustomDiv"
 
 const ParentChildProps = () => {
   const [name, setName] = useState('')
@@ -9,7 +9,7 @@ const ParentChildProps = () => {
           placeholder="enter a name"
           onChange={(e) => {setName(e.target.value)}}
         />
-      <Customh1 name={name}/>
+      <CustomDiv name={name}/>
     </>
   )
 }
