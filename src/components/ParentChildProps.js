@@ -8,8 +8,8 @@ const ParentChildProps = () => {
   }
   return (
     <>
-      <CustomInput onChange={onChange}/>    
       <p>You entered : {name}</p>  
+      <CustomInput onChange={onChange}/>    
     </>
   )
 }
