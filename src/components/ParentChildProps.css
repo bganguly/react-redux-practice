@@ -1,0 +1,8 @@
+.sideBySide {
+  /*see https://codepen.io/bganguly/pen/PoQEVwQ for an example to center-in-viewport */
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  /*evenly space the visible content*/
+  justify-content: space-evenly;
+}
