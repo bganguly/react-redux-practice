@@ -1,5 +1,5 @@
 const CustomDiv = () => {
-  return <h1>hello {Math.random()}</h1>
+  return <div>hello {Math.random()}</div>
 }
 
 export default CustomDiv
