@@ -3,9 +3,12 @@ import CustomInput from "./CustomInput"
 
 const ParentChildProps = () => {
   const [name, setName] = useState('')
+  const onChange = (e) => {
+    setName(e.target.value)
+  }
   return (
     <>
-      <CustomInput onChange={(e) => {setName(e.target.value)}}/>    
+      <CustomInput onChange={onChange}/>    
       <p>You entered : {name}</p>  
     </>
   )
