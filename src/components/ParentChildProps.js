@@ -1,15 +1,12 @@
 import { useState } from "react"
-import CustomDiv from "./CustomDiv"
+import CustomInput from "./CustomInput"
 
 const ParentChildProps = () => {
   const [name, setName] = useState('')
   return (
     <>
-      <input  
-          placeholder="enter a name"
-          onChange={(e) => {setName(e.target.value)}}
-        />
-      <CustomDiv name={name}/>
+      <CustomInput onChange={(e) => {setName(e.target.value)}}/>    
+      <p>You entered : {name}</p>  
     </>
   )
 }
