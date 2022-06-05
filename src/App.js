@@ -1,9 +1,9 @@
 import './App.css';
-import Customh1 from './components/Customh1';
+import CustomDiv from './components/CustomDiv';
 
 const App = ({name}) =>  {
   return (
-    <Customh1 name={name}/>
+    <CustomDiv name={name}/>
   );
 }
 
