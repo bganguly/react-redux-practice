@@ -1,5 +1,4 @@
-// import { useState, useEffect } from "react";
-import useGithubUserData from "./UseGithubUserData";
+import useGithubUserData from "../utils/UseGithubUserData";
 import GithubUser from "./GithubUser";
 
 const FetchGithubUserById = ({githubId}) => {

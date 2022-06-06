@@ -2,11 +2,11 @@ import { useState } from "react"
 import CustomInput from "./CustomInput"
 import FetchGithubUserById from "./FetchGithubUserById"
 
-import  "./ParentChildProps.css"
+import  "../styles/ParentChildProps.css"
 
 const ParentChildProps = () => {
   const [githubId, setGithubId] = useState('')
-  const onBlur = (e) => {
+  const onBlur = e => {
     setGithubId(e.target.value)
   }
 

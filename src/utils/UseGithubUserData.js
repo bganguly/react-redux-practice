@@ -5,19 +5,18 @@ const useGithubUserData = ({githubId}) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  let getData = () => {
-    setLoading(true)
-    // login is github handle- such as eveporcello or bganguly or gaearon etc
-    fetch(`https://api.github.com/users/${githubId}`)
-    .then((response) => response.json())
-    .then(setData)
-    .then(() => setLoading (false))
-    .catch(setError)
-  }
-
   // useffect is the combination of componentdidmount/willunmount etc
-  // and guaranteed to run _after_ render
+  // and guaranteed to run exactly once _after_ render
   useEffect(() => {
+    const getData = () => {
+      setLoading(true)
+      // githubid is github handle - such as eveporcello or bganguly or gaearon etc
+      fetch(`https://api.github.com/users/${githubId}`)
+      .then((response) => response.json())
+      .then(setData)
+      .then(() => setLoading (false))
+      .catch(setError)
+    }
     getData()
   },[githubId])
 
