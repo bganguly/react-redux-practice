@@ -1,34 +1,15 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+import useGithubUserData from "./UseGithubUserData";
 import GithubUser from "./GithubUser";
 
 const FetchGithubUserById = ({githubId}) => {
-  // initialise view with default 
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const response = useGithubUserData({githubId});  
 
-  let getData = () => {
-    setLoading(true)
-    // login is github handle- such as eveporcello or bnaguly etc
-    fetch(`https://api.github.com/users/${githubId}`)
-    .then((response) => response.json())
-    .then(setData)
-    .then(() => setLoading (false))
-    .catch(setError)
-  }
+  if (response.loading) return <h2> Loading.. </h2>
+  if (response.error) return <pre> {JSON.stringify(response.error,null,2)}</pre>
+  if (!response.data || !response.data.login) return <p> User not found </p>
 
-  // useffect is the combination of componentdidmount/willunmount etc
-  // and guaranteed to run _after_ render
-  useEffect(() => {
-    getData()
-  },[githubId])
-
-  if (loading) return <h1> Loading.. </h1>
-  if (error) return <pre> {JSON.stringify(error,null,2)}</pre>
-  if (!data || !data.login) return <p> User not found </p>
-  
-  return <GithubUser user={data}/>
-
+  return <GithubUser user={response.data}/>
 }
 
 export default FetchGithubUserById;

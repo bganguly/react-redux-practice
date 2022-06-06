@@ -13,7 +13,9 @@ const ParentChildProps = () => {
   return (
     <div className="sideBySide">
       <CustomInput onBlur={onBlur}/>    
-      { typeof githubId !== 'undefined' && githubId !== '' &&  <FetchGithubUserById githubId={githubId}/>}
+      { typeof githubId !== 'undefined' 
+        && githubId !== '' 
+        &&  <FetchGithubUserById githubId={githubId}/>}
     </div>
   )
 }
