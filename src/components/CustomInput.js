@@ -1,8 +1,9 @@
-const CustomInput = ({onChange}) => {
+const CustomInput = ({onBlur}) => {
+
   return (
     <input  
-      placeholder="enter a name"
-      onChange={onChange}
+      placeholder="enter a githubId"
+      onBlur={onBlur}
     />
   )
 }

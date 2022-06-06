@@ -1,18 +1,19 @@
 import { useState } from "react"
 import CustomInput from "./CustomInput"
-import CustomPara from "./CustomPara"
+import FetchGithubUserById from "./FetchGithubUserById"
 
 import  "./ParentChildProps.css"
 
 const ParentChildProps = () => {
-  const [name, setName] = useState('')
-  const onChange = (e) => {
-    setName(e.target.value)
+  const [githubId, setGithubId] = useState('')
+  const onBlur = (e) => {
+    setGithubId(e.target.value)
   }
+
   return (
     <div className="sideBySide">
-      <CustomInput onChange={onChange}/>    
-      <CustomPara name={name}/>
+      <CustomInput onBlur={onBlur}/>    
+      { typeof githubId !== 'undefined' && githubId !== '' &&  <FetchGithubUserById githubId={githubId}/>}
     </div>
   )
 }
